@@ -64,3 +64,12 @@ Incase of failure, the app will return an either 4xx or 5xx status code with fol
 	"sender":"Sendgrid"
 }
 ```
+
+## Todo
+Parse the response sent by each WS API
+Current, I just check the response code; if response code = 2xx, its a success, otherwise its a failure. To parse the response, we will have to create POJO corresponding to the response and ask RestTemplate to parse the response
+
+```
+ResponseEntity<ResponsePOJO> response = restTemplate.exchange(requestUrl, HttpMethod.POST, entity, ResponsePOJO.class);
+```
+RestTemplate throws HttpStatusCodeException if status code != 2xx, so we will have to catch it and parse the response string. The response is available as string if case of HttpStatusCodeException, so we will have to parse it to POJO using com.fasterxml.jackson.databind.ObjectMapper.
