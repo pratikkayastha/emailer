@@ -3,6 +3,7 @@ An app written in Spring Boot that sends out emails for either Sendgrid or Mailg
 
 ## How to run
 You can run the app by running the following command.
+You will need JDK1.8 installed.
 ```
 ./gradlew bootRun
 ```
