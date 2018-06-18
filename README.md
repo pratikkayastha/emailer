@@ -7,6 +7,17 @@ You will need JDK1.8 installed.
 ```
 ./gradlew bootRun
 ```
+The application will run on port 8080.
+
+Run the following to build an executable JAR.
+```
+./gradlew build
+```
+
+Run the following to run the JAR.
+```
+java -jar jar-name.jar --spring.config.location=classpath:/application.properties,classpath:/sender.properties
+```
 
 ## API Codes
 The codes does not contain API keys for Sendgrid and Mailgun, you will have to generate both API keys and place them in the following file
